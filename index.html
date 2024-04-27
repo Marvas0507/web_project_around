@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alrededor de los EE.UU.</title>
+    <meta
+    name="description"
+    content="Página interactiva en la que los usuarios pueden añadir, eliminar o dar like a las fotos"
+    >
+    <meta name="author" content="Marin Vásquez, 12davidvas@gmail.com" />
+    <meta
+        name="keywords"
+        content="fotos, lagos, montañas, valles, viajes, app, EE.UU."
+    >
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body>
+    <div class="page">
+        <section class="header">
+            <img class="header__logo" src="./images/Vector.svg" alt="logo web"/>
+            <img class="header__line" src="./images/Line.png" alt="line header"/>
+        </section>
+        <section class="profile">
+            <img class="profile__avatar" src="./images/avatar.png" alt="your avatar"/>
+            <div class="profile__info">
+                <div class="profile__info-content">
+                    <h1 class="profile__info-content-name">Jacques Cousteau</h1>
+                    <img class="profile__info-content-button" src="./images/Edit Button.png" alt="Edit Button"/>
+                </div>
+                <p class="profile__info-paragraph">Explorador</p>
+            </div>
+            <img class="profile__add" src="./images/Add Button.png" alt="Add Button"/>
+        </section>
+        <div class="popup">
+            <form class="form popup__form" novalidate>
+                <img class="form__close-form" src="./images/Close Icon.png" alt="Close Button"/>
+                <h2 class="form__title">Edit profile</h2>
+                <input class="form__input" type="text" placeholder="Nombre"/>
+                <input class="form__input" type="text" placeholder="Acerca de mi"/>
+                <button class="form__button" type="submit">Guardar</button>
+            </form>
+        </div>
+        <div class="popup">
+            <form class="form popup__add-card" novalidate>
+                <img class="form__close-card" src="./images/Close Icon.png" alt="Close Button"/>
+                <h2 class="form__title">Nuevo lugar</h2>
+                <input class="form__input" type="text" placeholder="Título"/>
+                <input class="form__input" type="url" placeholder="Enlace a la imagen"/>
+                <button class="form__button" type="submit">Crear</button>
+            </form>
+        </div>
+        <section></section>
+        <section></section>
+    </div>
+</body>
+</html>
