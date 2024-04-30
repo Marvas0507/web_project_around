@@ -31,16 +31,18 @@
             </div>
             <button type="button" class="profile__button-add"></button>
         </section>
-        <div class="popup">            
-            <button class="popup__button-close"></button>
-            <form class="form popup__add-info" novalidate>
-                <h2 class="form__title">Edit profile</h2>
-                <div class="form__content">
-                    <input class="form__content-input" type="text" placeholder="Nombre"/>
-                    <input class="form__content-input" type="text" placeholder="Acerca de mi"/>
-                </div>
-                <button class="form__button" type="submit">Guardar</button>
-            </form>
+        <div class="popup " id="popup-profile">
+            <div class="popup__content">            
+                <button class="popup__button-close"></button>
+                <form class="form popup__add-info" id="form-profile" novalidate>
+                    <h2 class="form__title">Edit profile</h2>
+                    <div class="form__content">
+                        <input class="form__content-input" type="text" placeholder="Nombre" id="input-name"/>
+                        <input class="form__content-input" type="text" placeholder="Acerca de mi" id="input-about"/>
+                    </div>
+                    <button class="form__button" type="submit">Guardar</button>
+                </form>
+            </div>
         </div>
         <!-- <div class="popup">
             <form class="form popup__add-card" novalidate>
@@ -129,5 +131,6 @@
             <p class="footer__copyright">&#169; 2024. Marvin Vásquez</p>
         </section>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
