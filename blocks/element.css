@@ -1,0 +1,73 @@
+.element{
+    max-width: 882px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 50px auto;
+}
+
+.element__card{
+    max-width: 282px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.element__image{
+    width: 282px;
+    height: 282px;
+}
+
+.element__button-delete{
+    z-index: 1;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    border: none;
+    cursor: pointer;
+    width: 18px;
+    height: 19.3px;
+    background-color: transparent;
+    background-image: url(../images/Trash.png);
+}
+
+.element__button-delete:hover{
+    opacity: 50%;
+}
+
+.element__content{
+    max-width: 282px;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.element__content-title{
+    color: black;
+    margin: 0;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29.05px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.element__content_like{    
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    width: 21px;
+    height: 19px;
+    margin: auto 0;
+    background-image: url(../images/like.png);
+}
+
+.element__content_like:hover{
+    opacity: 50%;
+}

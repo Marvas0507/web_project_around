@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alrededor de los EE.UU.</title>
+    <title>Around the US</title>
     <meta
     name="description"
     content="Página interactiva en la que los usuarios pueden añadir, eliminar o dar like a las fotos"
@@ -18,23 +18,22 @@
 <body>
     <div class="page">
         <section class="header">
-            <img class="header__logo" src="./images/Vector.svg" alt="logo web"/>
-            <img class="header__line" src="./images/Line.png" alt="line header"/>
+            <img class="header__logo" src="./images/Vector.svg" alt="logo web"/>            
         </section>
         <section class="profile">
             <img class="profile__avatar" src="./images/avatar.png" alt="your avatar"/>
             <div class="profile__info">
                 <div class="profile__info-content">
                     <h1 class="profile__info-content-name">Jacques Cousteau</h1>
-                    <img class="profile__info-content-button" src="./images/Edit Button.png" alt="Edit Button"/>
+                    <button type="button" class="profile__info-content-add-button"></button>
                 </div>
                 <p class="profile__info-paragraph">Explorador</p>
             </div>
-            <img class="profile__add" src="./images/Add Button.png" alt="Add Button"/>
+            <button type="button" class="profile__button-add"></button>
         </section>
-        <div class="popup">
+        <!-- <div class="popup">
             <form class="form popup__form" novalidate>
-                <img class="form__close-form" src="./images/Close Icon.png" alt="Close Button"/>
+                <button class="form__button-close"></button>
                 <h2 class="form__title">Edit profile</h2>
                 <input class="form__input" type="text" placeholder="Nombre"/>
                 <input class="form__input" type="text" placeholder="Acerca de mi"/>
@@ -43,15 +42,90 @@
         </div>
         <div class="popup">
             <form class="form popup__add-card" novalidate>
-                <img class="form__close-card" src="./images/Close Icon.png" alt="Close Button"/>
+                <button class="form__button-close"></button>
                 <h2 class="form__title">Nuevo lugar</h2>
                 <input class="form__input" type="text" placeholder="Título"/>
                 <input class="form__input" type="url" placeholder="Enlace a la imagen"/>
                 <button class="form__button" type="submit">Crear</button>
             </form>
-        </div>
-        <section></section>
-        <section></section>
+        </div> -->
+        <section class="element">
+            <div class="element__card">
+                <img
+                    src="./images/img_item_1.png"
+                    class="element__image"
+                    alt="Valle de Yosemite"
+                />
+                <button type="button" class="element__button-delete"></button>
+                <div class="element__content">
+                    <h3 class="element__content-title">Valle de Yosemite</h3>
+                    <button type="button" class="element__content_like"></button>
+                </div>
+            </div>   
+            <div class="element__card">
+                <img
+                    src="./images/img_item_2.png"
+                    class="element__image"
+                    alt="Lago Louise"
+                />
+                <button type="button" class="element__button-delete"></button>
+                <div class="element__content">
+                    <h3 class="element__content-title">Lago Louise</h3>
+                    <button type="button" class="element__content_like"></button>
+                </div>
+            </div>
+            <div class="element__card">
+                <img
+                    src="./images/img_item_3.png"
+                    class="element__image"
+                    alt="Montañas Calvas"
+                />
+                <button type="button" class="element__button-delete"></button>
+                <div class="element__content">
+                    <h3 class="element__content-title">Montañas Calvas</h3>
+                    <button type="button" class="element__content_like"></button>
+                </div>
+            </div>   
+            <div class="element__card">
+                <img
+                    src="./images/img_item_4.jpg"
+                    class="element__image"
+                    alt="Latemar"
+                />
+                <button type="button" class="element__button-delete"></button>
+                <div class="element__content">
+                    <h3 class="element__content-title">Latemar</h3>
+                    <button type="button" class="element__content_like"></button>
+                </div>
+            </div>
+            <div class="element__card">
+                <img
+                    src="./images/img_item_5.jpg"
+                    class="element__image"
+                    alt="Park National"
+                />
+                <button type="button" class="element__button-delete"></button>
+                <div class="element__content">
+                    <h3 class="element__content-title">Park National</h3>
+                    <button type="button" class="element__content_like"></button>
+                </div>
+            </div>
+            <div class="element__card">
+                <img
+                    src="./images/img_item_6.jpg"
+                    class="element__image"
+                    alt="Lago di Braies"
+                />
+                <button type="button" class="element__button-delete"></button>
+                <div class="element__content">
+                    <h3 class="element__content-title">Lago di Braies</h3>
+                    <button type="button" class="element__content_like"></button>
+                </div>
+            </div>        
+        </section>
+        <section class="footer">
+            <p class="footer__copyright">&#169; 2024. Marvin Vásquez</p>
+        </section>
     </div>
 </body>
 </html>
