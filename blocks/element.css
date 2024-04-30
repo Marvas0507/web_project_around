@@ -58,7 +58,7 @@
     overflow: hidden;
 }
 
-.element__content_like{    
+.element__content-like{    
     background-color: white;
     border: none;
     cursor: pointer;
@@ -68,6 +68,6 @@
     background-image: url(../images/like.png);
 }
 
-.element__content_like:hover{
+.element__content-like:hover{
     opacity: 50%;
 }
