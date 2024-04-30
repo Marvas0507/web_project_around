@@ -1,0 +1,118 @@
+.popup{
+    z-index: 2;
+    position: fixed;
+}
+.popup__button-close{
+    border: none;
+    cursor: pointer;
+    background-image: url(../images/Close\ Icon.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+.popup__button-close:hover{
+    opacity: 50%;
+}
+.popup__add-info{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.form__title{
+    margin: 34px auto 54px;
+    color: black;
+}
+.form__content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.form__content-input{
+    color: black;
+    padding-bottom: 13px;
+    margin: auto;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    border: none;
+    border-bottom: 1px solid #C4C4C4;
+}
+.form__content-input::placeholder{
+    color: #C4C4C4;
+}
+.form__button{
+    margin: 48px auto 36px;
+    padding: 13px 0;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+}
+.form__button:hover{
+    opacity: 50%;
+}
+
+@media screen and (max-width:2560px) and (min-width:768px) {
+    .popup{
+        width: 430px;
+        top: 195px;
+        left:calc(50vw - 215px);
+    }
+    .popup__button-close{          
+        width: 40.7px;
+        height: 40.7px;      
+        position: absolute;
+        top: -30px;
+        right: -40px;
+    }
+    .form__title{
+        width: 330px;
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 29.05px;
+    }
+    .form__content-input{
+        width: 330px;
+    }
+    .form__button{
+        width: 330px;
+    }
+
+}
+
+
+@media screen and (max-width:767px) and (min-width:320px) {
+    .popup{
+        width: 282px;
+        top: 150px;
+        left:calc(50vw - 141px);
+    }
+    .popup__button-close{       
+        width: 26px;
+        height: 26px;    
+        position: absolute;
+        top: -30px;
+        left: 250px;
+        background-size:26px 26px ;
+    }
+    .form__title{
+        width: 238px;font-family: Inter;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 21.78px;
+    }
+    .form__content-input{
+        width: 238px;
+    }
+    .form__button{
+        width: 238px;
+    }
+}
