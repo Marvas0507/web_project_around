@@ -21,7 +21,7 @@ formClose.addEventListener("click", function(){
     popupProfile.classList.remove("popup__show");
 })
 
-formProfile.addEventListener("submit", function(){
+formProfile.addEventListener("submit", function(evt){
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileAbout.textContent = inputAbout.value;
