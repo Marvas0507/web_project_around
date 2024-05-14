@@ -33,7 +33,7 @@
         </section>
         <div class="popup " id="popup-profile">
             <div class="popup__content">            
-                <button class="popup__button-close"></button>
+                <button class="popup__button-close" id="form-button-close"></button>
                 <form class="form popup__add-info" id="form-profile" novalidate>
                     <h2 class="form__title">Edit profile</h2>
                     <div class="form__content">
@@ -44,29 +44,36 @@
                 </form>
             </div>
         </div>
-        <!-- <div class="popup">
-            <form class="form popup__add-card" novalidate>
-                <button class="form__button-close"></button>
-                <h2 class="form__title">Nuevo lugar</h2>
-                <input class="form__input" type="text" placeholder="Título"/>
-                <input class="form__input" type="url" placeholder="Enlace a la imagen"/>
-                <button class="form__button" type="submit">Crear</button>
-            </form>
-        </div> -->
+        <div class="popup " id="popup-cards">
+            <div class="popup__content">            
+                <button class="popup__button-close" id="card-button-close"></button>
+                <form class="form popup__add-info" id="form-cards" novalidate>
+                    <h2 class="form__title">Nuevo lugar</h2>
+                    <div class="form__content">
+                        <input class="form__content-input" type="text" placeholder="Título" id="input-name"/>
+                        <input class="form__content-input" type="text" placeholder="Enlace a la imagen" id="input-about"/>
+                    </div>
+                    <button class="form__button" type="submit">Crear</button>
+                </form>
+            </div>
+        </div>
         <section class="element">
-            <div class="element__card">
-                <img
-                    src="./images/img_item_1.png"
-                    class="element__image"
-                    alt="Valle de Yosemite"
-                />
-                <button type="button" class="element__button-delete"></button>
-                <div class="element__content">
-                    <h3 class="element__content-title">Valle de Yosemite</h3>
-                    <button type="button" class="element__content-like"></button>
-                </div>
-            </div>   
-            <div class="element__card">
+            <template class="template__card">
+                <div class="element__card">
+                    <img
+                        src="  "
+                        class="element__image"
+                        alt=""
+                    />
+                    <button type="button" class="element__button-delete"></button>
+                    <div class="element__content">
+                        <h3 class="element__content-title"></h3>
+                        <button type="button" class="element__content-like" id="like"></button>
+                    </div>
+                </div>   
+            </template>
+            
+            <!-- <div class="element__card">
                 <img
                     src="./images/img_item_2.png"
                     class="element__image"
@@ -125,7 +132,7 @@
                     <h3 class="element__content-title">Lago di Braies</h3>
                     <button type="button" class="element__content-like"></button>
                 </div>
-            </div>        
+            </div>         -->
         </section>
         <section class="footer">
             <p class="footer__copyright">&#169; 2024. Marvin Vásquez</p>

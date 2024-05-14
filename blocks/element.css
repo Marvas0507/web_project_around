@@ -68,6 +68,10 @@
     background-image: url(../images/like.png);
 }
 
+.element__content-like-active{
+    background-image: url(../images/like-active.png);
+}
+
 .element__content-like:hover{
     opacity: 50%;
 }
