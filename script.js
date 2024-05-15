@@ -39,7 +39,9 @@ const initialCards = [
 const popupCards = document.querySelector("#popup-cards");
 const cardButton = document.querySelector(".profile__button-add")
 const cardClose = document.querySelector("#card-button-close");
-const formCard = document.querySelector("#form-cards")
+const formCard = document.querySelector("#form-cards");
+const cardAddImage = document.querySelector(".element__image");
+const cardAddTitle = document.querySelector(".element__content-title");
 
 profileButton.addEventListener("click", function(){
     popupProfile.classList.add("popup__show");
@@ -61,7 +63,7 @@ formProfile.addEventListener("submit", function(evt){
 });
 
 function cardGenerator(name, link){
-    const card = template.cloneNode(true).content.querySelector(".element__card");
+    const card = template.cloneNode(true).content.querySelector(".element__cards");
     const cardImage = card.querySelector(".element__image");
     const cardTitle = card.querySelector(".element__content-title");
     cardImage.src = link;
@@ -100,5 +102,10 @@ formCard.addEventListener("submit",function(evt){
     evt.preventDefault();
     const cardAdd = cardGenerator();
     cardArea.prepend(cardAdd);
+    // help here
+    cardAddTitle.textContent = inputName.value;
+    cardAddImage.textContent = inputAbout.value;    
     handleCloseCards();
 });
+
+cardAddImage.addEventListener("click",function)
