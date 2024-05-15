@@ -40,8 +40,14 @@ const popupCards = document.querySelector("#popup-cards");
 const cardButton = document.querySelector(".profile__button-add")
 const cardClose = document.querySelector("#card-button-close");
 const formCard = document.querySelector("#form-cards");
-const cardAddImage = document.querySelector(".element__image");
-const cardAddTitle = document.querySelector(".element__content-title");
+
+// const cardMain = document.querySelector(".element__cards");
+// const cardElement = document.querySelector(".element__card")
+// const cardAddImage = document.querySelector(".element__image");   
+// const cardDelected = document.querySelector(".element__button-delete");
+// const cardContent = document.querySelector(".element__content");
+// const cardAddTitle = document.querySelector(".element__content-title");
+// const cardLike = document.querySelector(".element__content-like");
 
 profileButton.addEventListener("click", function(){
     popupProfile.classList.add("popup__show");
@@ -108,4 +114,7 @@ formCard.addEventListener("submit",function(evt){
     handleCloseCards();
 });
 
-cardAddImage.addEventListener("click",function)
+// cardAddImage.addEventListener("click",function(){
+//   cardMain.classList.add("cards");  
+// });
+
