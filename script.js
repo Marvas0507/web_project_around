@@ -69,7 +69,7 @@ formProfile.addEventListener("submit", function(evt){
 });
 
 function cardGenerator(name, link){
-    const card = template.cloneNode(true).content.querySelector(".element__cards");
+    const card = template.cloneNode(true).content.querySelector(".element__card");
     const cardImage = card.querySelector(".element__image");
     const cardTitle = card.querySelector(".element__content-title");
     cardImage.src = link;

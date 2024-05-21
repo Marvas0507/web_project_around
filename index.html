@@ -51,7 +51,7 @@
                     <h2 class="form__title">Nuevo lugar</h2>
                     <div class="form__content">
                         <input class="form__content-input" type="text" placeholder="Título" id="input-name"/>
-                        <input class="form__content-input" type="text" placeholder="Enlace a la imagen" id="input-about"/>
+                        <input class="form__content-input" type="url" placeholder="Enlace a la imagen" id="input-about"/>
                     </div>
                     <button class="form__button" type="submit">Crear</button>
                 </form>
@@ -59,21 +59,45 @@
         </div>
         <section class="element">
             <template class="template__card">
-                <div class="element__cards">
-                    <div class="element__card">
-                        <img
-                            src="  "
-                            class="element__image"
-                            alt=""
-                        />
-                        <button type="button" class="element__button-delete"></button>
-                        <div class="element__content">
-                            <h3 class="element__content-title"></h3>
-                            <button type="button" class="element__content-like" id="like"></button>
-                        </div>
-                    </div>   
+                <div class="element__card">
+                    <img
+                        src="  "
+                        class="element__image"
+                        alt=""
+                    />
+                    <button type="button" class="element__button-delete"></button>
+                    <div class="element__content">
+                        <h3 class="element__content-title"></h3>
+                        <button type="button" class="element__content-like" id="like"></button>
+                    </div>
                 </div>    
             </template>
+
+            <div class="popup-photo popup-photo_open" id="popup-photo">
+                <div class="popup-photo__container">
+                  <button class="popup-photo__close-button"></button>
+                  <img src="./images/img_item_2.png" class="popup-photo__image" alt=" "/>
+                  <h2 class="popup-photo__title">diferente lugar</h2>
+                </div>
+            </div>
+
+            <!-- <div class="cards cards__show">                
+                <div class="card__container">
+                    <button type="button" class="card__button-show"></button>
+                    <img
+                        src="./images/img_item_6.jpg"
+                        class="element__image card__image-show"
+                        alt="Montañas Calvas"
+                    />                    
+                    <div class="element__content card__content">
+                        <h3 class="element__content-title card__content-title">Montañas Calvas</h3>
+                        <button type="button" class="element__content-like card__content-like"></button>
+                    </div>
+                </div>
+            </div> -->
+
+
+
             <!-- <div class="cards">
                 <div class="element__card card">
                     <img
