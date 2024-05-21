@@ -41,13 +41,13 @@ const cardButton = document.querySelector(".profile__button-add")
 const cardClose = document.querySelector("#card-button-close");
 const formCard = document.querySelector("#form-cards");
 
-// const cardMain = document.querySelector(".element__cards");
-// const cardElement = document.querySelector(".element__card")
-// const cardAddImage = document.querySelector(".element__image");   
-// const cardDelected = document.querySelector(".element__button-delete");
-// const cardContent = document.querySelector(".element__content");
-// const cardAddTitle = document.querySelector(".element__content-title");
-// const cardLike = document.querySelector(".element__content-like");
+const popupPhoto = document.querySelector(".popup__photo");
+const buttonClosePopupPhoto = document.querySelector(".popup__photo-container-close-button");
+const popupPhotoImage = document.querySelector(".popup__photo-container-image");
+const popupPhotoTitle = document.querySelector(".popup__photo-container-title");
+
+const inputTitle = document.querySelector("#input-title");
+const inputUrl = document.querySelector("#input-url")
 
 profileButton.addEventListener("click", function(){
     popupProfile.classList.add("popup__show");
@@ -68,7 +68,7 @@ formProfile.addEventListener("submit", function(evt){
     handleCloseProfile();
 });
 
-function cardGenerator(name, link){
+function createCard(name, link){
     const card = template.cloneNode(true).content.querySelector(".element__card");
     const cardImage = card.querySelector(".element__image");
     const cardTitle = card.querySelector(".element__content-title");
@@ -84,11 +84,16 @@ function cardGenerator(name, link){
     likeActive.addEventListener("click", function(){
         likeActive.classList.toggle("element__content-like-active")
     });
+    cardImage.addEventListener("click",function(){
+        popupPhotoImage.src = link;
+        popupPhotoTitle.textContent = name;
+        popupPhoto.classList.add("popup__photo-open");
+    })
     return card;
 }
 
 initialCards.forEach(function (element){
-    const newCard = cardGenerator(element.name, element.link);
+    const newCard = createCard(element.name, element.link);
     cardArea.append(newCard);
 });
 
@@ -106,15 +111,16 @@ cardClose.addEventListener("click", function(){
 
 formCard.addEventListener("submit",function(evt){
     evt.preventDefault();
-    const cardAdd = cardGenerator();
-    cardArea.prepend(cardAdd);
-    // help here
-    cardAddTitle.textContent = inputName.value;
-    cardAddImage.textContent = inputAbout.value;    
+    const cardAdd = createCard(
+        inputTitle.value,
+        inputUrl.value,
+    );
+    cardArea.prepend(cardAdd);    
     handleCloseCards();
 });
 
-// cardAddImage.addEventListener("click",function(){
-//   cardMain.classList.add("cards");  
-// });
+buttonClosePopupPhoto.addEventListener("click", function(){
+    popupPhoto.classList.remove("popup__photo-open");
+});
+
 

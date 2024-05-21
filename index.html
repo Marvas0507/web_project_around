@@ -50,8 +50,8 @@
                 <form class="form popup__add-info" id="form-cards" novalidate>
                     <h2 class="form__title">Nuevo lugar</h2>
                     <div class="form__content">
-                        <input class="form__content-input" type="text" placeholder="Título" id="input-name"/>
-                        <input class="form__content-input" type="url" placeholder="Enlace a la imagen" id="input-about"/>
+                        <input class="form__content-input" type="text" placeholder="Título" id="input-title"/>
+                        <input class="form__content-input" type="url" placeholder="Enlace a la imagen" id="input-url"/>
                     </div>
                     <button class="form__button" type="submit">Crear</button>
                 </form>
@@ -73,105 +73,13 @@
                 </div>    
             </template>
 
-            <div class="popup-photo popup-photo_open" id="popup-photo">
-                <div class="popup-photo__container">
-                  <button class="popup-photo__close-button"></button>
-                  <img src="./images/img_item_2.png" class="popup-photo__image" alt=" "/>
-                  <h2 class="popup-photo__title">diferente lugar</h2>
+            <div class="popup__photo" id="popup-photo">
+                <div class="popup__photo-container">
+                  <button class="popup__photo-container-close-button"></button>
+                  <img src="" class="popup__photo-container-image" alt=" "/>
+                  <h2 class="popup__photo-container-title"></h2>
                 </div>
             </div>
-
-            <!-- <div class="cards cards__show">                
-                <div class="card__container">
-                    <button type="button" class="card__button-show"></button>
-                    <img
-                        src="./images/img_item_6.jpg"
-                        class="element__image card__image-show"
-                        alt="Montañas Calvas"
-                    />                    
-                    <div class="element__content card__content">
-                        <h3 class="element__content-title card__content-title">Montañas Calvas</h3>
-                        <button type="button" class="element__content-like card__content-like"></button>
-                    </div>
-                </div>
-            </div> -->
-
-
-
-            <!-- <div class="cards">
-                <div class="element__card card">
-                    <img
-                        src="./images/img_item_1.png"
-                        class="element__image card__image-show"
-                        alt="Montañas Calvas"
-                    />
-                    <button type="button" class="element__button-delete card__button-show"></button>
-                    <div class="element__content card__content">
-                        <h3 class="element__content-title card__content-title">Montañas Calvas</h3>
-                        <button type="button" class="element__content-like card__content-like"></button>
-                    </div>
-                </div>
-            </div>    -->
-            <!-- <div class="element__card">
-                <img
-                    src="./images/img_item_2.png"
-                    class="element__image"
-                    alt="Lago Louise"
-                />
-                <button type="button" class="element__button-delete"></button>
-                <div class="element__content">
-                    <h3 class="element__content-title">Lago Louise</h3>
-                    <button type="button" class="element__content-like"></button>
-                </div>
-            </div>
-            <div class="element__card">
-                <img
-                    src="./images/img_item_3.png"
-                    class="element__image"
-                    alt="Montañas Calvas"
-                />
-                <button type="button" class="element__button-delete"></button>
-                <div class="element__content">
-                    <h3 class="element__content-title">Montañas Calvas</h3>
-                    <button type="button" class="element__content-like"></button>
-                </div>
-            </div>   
-            <div class="element__card">
-                <img
-                    src="./images/img_item_4.jpg"
-                    class="element__image"
-                    alt="Latemar"
-                />
-                <button type="button" class="element__button-delete"></button>
-                <div class="element__content">
-                    <h3 class="element__content-title">Latemar</h3>
-                    <button type="button" class="element__content-like"></button>
-                </div>
-            </div>
-            <div class="element__card">
-                <img
-                    src="./images/img_item_5.jpg"
-                    class="element__image"
-                    alt="Park National"
-                />
-                <button type="button" class="element__button-delete"></button>
-                <div class="element__content">
-                    <h3 class="element__content-title">Park National</h3>
-                    <button type="button" class="element__content-like"></button>
-                </div>
-            </div>
-            <div class="element__card">
-                <img
-                    src="./images/img_item_6.jpg"
-                    class="element__image"
-                    alt="Lago di Braies"
-                />
-                <button type="button" class="element__button-delete"></button>
-                <div class="element__content">
-                    <h3 class="element__content-title">Lago di Braies</h3>
-                    <button type="button" class="element__content-like"></button>
-                </div>
-            </div>         -->
         </section>
         <section class="footer">
             <p class="footer__copyright">&#169; 2024. Marvin Vásquez</p>
