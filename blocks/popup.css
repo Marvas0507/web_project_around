@@ -8,14 +8,17 @@
     top: 0;
     right: 0;
 }
+
 .popup__show{
     display: flex;
 }
+
 .popup__content{
     margin: auto;
     z-index: 3;
     position: fixed;
 }
+
 .popup__button-close{
     border: none;
     cursor: pointer;
@@ -24,9 +27,11 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .popup__button-close:hover{
     opacity: 50%;
 }
+
 .popup__add-info{
     background-color: white;
     width: 100%;
@@ -35,11 +40,11 @@
     border-radius: 10px;
 }
 
-.popup__photo {
+.popup-photo {
     display: none;
 }
 
-.popup__photo-open {
+.popup-photo-open {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -51,7 +56,7 @@
     left: 0;
 }
 
-.popup__photo-container {
+.popup-photo__content {
     position: relative;
     display: flex;
     gap: 10px;
@@ -59,31 +64,27 @@
     margin: auto;
 }
 
-.popup__photo-container-close-button {
+.popup-photo__content-close-button {
     border: none;
     cursor: pointer;
     background-image: url(../images/Close\ Icon.png);
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 40px;
-    height: 40px;
     position: absolute;
-    top: -40px;
-    right: -40px;
 }
 
-.popup__photo-container-close-button:hover {
+.popup-photo__content-close-button:hover {
     opacity: 50%;
 }
 
-.popup__photo-container-image {
+.popup-photo__content-image {
     max-width: 75vw;
     max-height: 75vh;
     border-radius: 15px;
 }
 
-.popup__photo-container-title {
+.popup-photo__content-title {
     font-family: Inter;
     margin: 0;
     font-size: 18px;
@@ -102,6 +103,12 @@
         top: -30px;
         right: -40px;
     }
+    .popup-photo__content-close-button {
+        width: 40px;
+        aspect-ratio: 1 / 1;
+        top: -40px;
+        right: -40px;
+    }
 }
 
 @media screen and (max-width:767px) and (min-width:320px) {
@@ -116,5 +123,11 @@
         position: absolute;
         top: -30px;
         left: 250px;
+    }
+    .popup-photo__content-close-button {
+        width: 26px;
+        aspect-ratio: 1 / 1;
+        top: -26px;
+        right: -26px;
     }
 }
