@@ -34,11 +34,22 @@
         <div class="popup " id="popup-profile">
             <div class="popup__content">            
                 <button class="popup__button-close" id="form-button-close"></button>
-                <form class="form popup__add-info" id="form-profile" novalidate>
+                <form class="form popup__add-info" id="form-profile">
                     <h2 class="form__title">Edit profile</h2>
                     <div class="form__content">
-                        <input class="form__content-input" type="text" placeholder="Nombre" id="input-name"/>
-                        <input class="form__content-input" type="text" placeholder="Acerca de mi" id="input-about"/>
+                        <input class="form__content-input" 
+                            type="text" 
+                            placeholder="Nombre" 
+                            id="input-name" 
+                            required
+                        />
+                        <input 
+                            class="form__content-input" 
+                            type="text" 
+                            placeholder="Acerca de mi" 
+                            id="input-about" 
+                            required
+                        />
                     </div>
                     <button class="form__button" type="submit">Guardar</button>
                 </form>
@@ -47,11 +58,11 @@
         <div class="popup" id="popup-cards">
             <div class="popup__content">            
                 <button class="popup__button-close" id="card-button-close"></button>
-                <form class="form popup__add-info" id="form-cards" novalidate>
+                <form class="form popup__add-info" id="form-cards">
                     <h2 class="form__title">Nuevo lugar</h2>
                     <div class="form__content">
-                        <input class="form__content-input" type="text" placeholder="Título" id="input-title"/>
-                        <input class="form__content-input" type="url" placeholder="Enlace a la imagen" id="input-url"/>
+                        <input class="form__content-input" type="text" placeholder="Título" id="input-title" required/>
+                        <input class="form__content-input" type="url" placeholder="Enlace a la imagen" id="input-url" required/>
                     </div>
                     <button class="form__button" type="submit">Crear</button>
                 </form>
