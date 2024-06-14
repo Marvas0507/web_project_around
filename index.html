@@ -42,14 +42,20 @@
                             placeholder="Nombre" 
                             id="input-name" 
                             required
+                            minlength="2"
+                            maxlength="40"
                         />
+                        <span class="form-error-message name-error"></span>
                         <input 
                             class="form__content-input" 
                             type="text" 
                             placeholder="Acerca de mi" 
                             id="input-about" 
                             required
+                            minlength="2"
+                            maxlength="200"
                         />
+                        <span class="form-error-message about-error"></span>
                     </div>
                     <button class="form__button" type="submit">Guardar</button>
                 </form>
@@ -61,8 +67,24 @@
                 <form class="form popup__add-info" id="form-cards">
                     <h2 class="form__title">Nuevo lugar</h2>
                     <div class="form__content">
-                        <input class="form__content-input" type="text" placeholder="Título" id="input-title" required/>
-                        <input class="form__content-input" type="url" placeholder="Enlace a la imagen" id="input-url" required/>
+                        <input 
+                        class="form__content-input" 
+                        type="text" 
+                        placeholder="Título" 
+                        id="input-title" 
+                        required
+                        minlength="2"
+                        maxlength="30"
+                        />
+                        <span class="form-error-message place-name-error"></span>
+                        <input 
+                        class="form__content-input" 
+                        type="url" 
+                        placeholder="Enlace a la imagen" 
+                        id="input-url" 
+                        required
+                        />
+                        <span class="form-error-message image-link-error"></span>
                     </div>
                     <button class="form__button" type="submit">Crear</button>
                 </form>
@@ -97,5 +119,6 @@
         </section>
     </div>
     <script src="./script.js"></script>
+    <script src="./validation.js"></script>
 </body>
 </html>
