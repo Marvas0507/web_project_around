@@ -1,11 +1,10 @@
 .form__title{
-    margin: 34px auto 54px;
+    margin: 34px auto ;
     color: black;
 }
 .form__content{
     display: flex;
     flex-direction: column;
-    gap: 30px;
 }
 .form__content-input{
     color: black;
@@ -21,11 +20,14 @@
 .form__content-input::placeholder{
     color: #C4C4C4;
 }
+.form__content-input:last-of-type{
+    margin-top: 34px;
+}
 .form__content-input_type_error{
     border-bottom: 2px solid #ff0000;
 }
 .form__button{
-    margin: 48px auto 36px;
+    margin: 34px auto;
     padding: 13px 0;
     cursor: pointer;
     background-color: black;
@@ -46,10 +48,11 @@ background-color: #fff;
   border: 1px solid #ccc;
   pointer-events: none;
 }
-.form-error-message{
+.form__error-message{
     color: #ff0000;
     font-family: "Inter regular";
     font-size: 12px;
+    margin: 0 48px;
 }
 
 @media screen and (max-width:2560px) and (min-width:768px) {

@@ -67,5 +67,5 @@ function toggleButtonState(inputList, buttonElement, config) {
     submitButtonSelector: ".form__button",
     inactiveButtonClass: "form__button_disabled",
     inputErrorClass: "form__content-input_type_error",
-    inputErrorMessageClass: "form-error-message",
+    inputErrorMessageClass: "form__error-message",
   });

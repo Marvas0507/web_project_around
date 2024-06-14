@@ -57,6 +57,12 @@ function handleCloseProfile(){
     popupProfile.classList.remove("popup__show");
 };
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        handleCloseProfile();
+    }
+});
+
 formClose.addEventListener("click", function(){
     popupProfile.classList.remove("popup__show");
 });
@@ -105,6 +111,12 @@ function handleCloseCards(){
     popupCards.classList.remove("popup__show");
 };
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        handleCloseCards();
+    }
+});
+
 cardClose.addEventListener("click", function(){
     popupCards.classList.remove("popup__show");
 });
@@ -121,6 +133,20 @@ formCard.addEventListener("submit",function(evt){
 
 buttonClosePopupPhoto.addEventListener("click", function(){
     popupPhoto.classList.remove("popup-photo-open");
+});
+
+document.addEventListener("click", function(event) {
+    if (
+        !event.target.closest(".popup__content") &&
+        (popupProfile.classList.contains("popup__show") || popupCards.classList.contains("popup__show"))
+    ) {
+        if (popupProfile.contains(event.target)) {
+            handleCloseProfile();
+        }
+        if (popupCards.contains(event.target)) {
+            handleCloseCards();
+        }
+    }
 });
 
 
