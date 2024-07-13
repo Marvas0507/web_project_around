@@ -1,6 +1,6 @@
 import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import { handleEscapeKey, handleClosePopups, handleClickOutside,} from "./utils.js";
+import FormValidator from "./validation.js";
+import { handleEscapeKey, handleClosePopups, handleClickOutside } from "./utils.js";
 import { popupPhoto, handleOpenPopups } from "./Card.js";
 
 const popupProfile = document.querySelector("#popup-profile");
@@ -12,58 +12,55 @@ const profileName = document.querySelector(".profile__info-content-name");
 const profileAbout = document.querySelector(".profile__info-paragraph");
 const profileButton = document.querySelector(".profile__info-content-add-button");
 
-
 const initialCards = [
     {
-      name: "Valle de Yosemite",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+        name: "Valle de Yosemite",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
     },
     {
-      name: "Lago Louise",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
+        name: "Lago Louise",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
     },
     {
-      name: "Montañas Calvas",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg"
+        name: "Montañas Calvas",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg"
     },
     {
-      name: "Latemar",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg"
+        name: "Latemar",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg"
     },
     {
-      name: "Parque Nacional de la Vanoise",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
+        name: "Parque Nacional de la Vanoise",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
     },
     {
-      name: "Lago di Braies",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
+        name: "Lago di Braies",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
     }
 ];
-const cardArea =document.querySelector(".element");
+
+const cardArea = document.querySelector(".element");
 const popupCards = document.querySelector("#popup-cards");
 const formCard = document.querySelector("#form-cards");
-const cardButton = document.querySelector(".profile__button-add")
+const cardButton = document.querySelector(".profile__button-add");
 const cardClose = document.querySelector("#card-button-close");
 const inputTitle = document.querySelector("#input-title");
-const inputUrl = document.querySelector("#input-url")
-const buttonClosePopupPhoto = document.querySelector(".popup-photo__content-close-button");
+const inputUrl = document.querySelector("#input-url");
+const buttonClosePopupPhoto = document.querySelector("#popup-photo-close");
 
 function handleProfileFormSubmit(e) {
     e.preventDefault();
     profileName.textContent = inputName.value;
     profileAbout.textContent = inputAbout.value;
-    popupProfile.classList.remove("popup__show") /////revisar al final
-};
+    popupProfile.classList.remove("popup__show");
+}
 
-function handlePopupCardsSubmit (e) {
+function handlePopupCardsSubmit(e) {
     e.preventDefault();
-    const newCard = new Card (
-        inputTitle.value,
-        inputUrl.value
-    ).createCard();
-    handleClosePopus(popupCards);
+    const newCard = new Card(inputTitle.value, inputUrl.value).createCard();
+    handleClosePopups(popupCards);
     cardArea.prepend(newCard);
-};
+}
 
 initialCards.forEach((item) => {
     const initialCard = new Card(item.name, item.link).createCard();
@@ -95,7 +92,7 @@ buttonClosePopupPhoto.addEventListener("click", () => {
     handleClosePopups(popupPhoto);
 });
 
-document.addEventListener("keydown", (e) =>{
+document.addEventListener("keydown", (e) => {
     handleEscapeKey(e, popupProfile);
     handleEscapeKey(e, popupCards);
     handleEscapeKey(e, popupPhoto);
