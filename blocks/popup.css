@@ -47,13 +47,13 @@
 }
 
 
-.popup-photo__content-image {
+.popup__content-image {
     max-width: 75vw;
     max-height: 75vh;
     border-radius: 15px;
 }
 
-.popup-photo__content-title {
+.popup__content-title {
     font-family: Inter;
     margin: 0;
     font-size: 18px;
