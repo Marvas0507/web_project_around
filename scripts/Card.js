@@ -4,8 +4,8 @@ export function handleOpenPopups(popup) {
 
 const template = document.querySelector(".template__card");
 export const popupPhoto = document.querySelector("#popup-photo");
-export const popupPhotoImage = document.querySelector(".popup-photo__content-image");
-export const popupPhotoTitle = document.querySelector(".popup-photo__content-title");
+export const popupPhotoImage = document.querySelector(".popup__content-image");
+export const popupPhotoTitle = document.querySelector(".popup__content-title");
 
 export default class Card {
     constructor(name, link) {
