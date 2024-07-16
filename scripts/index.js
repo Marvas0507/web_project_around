@@ -1,6 +1,6 @@
 import Card from "./Card.js";
 import FormValidator from "./validation.js";
-import { handleEscapeKey, handleClosePopups, handleClickOutside } from "./utils.js";
+import { handleEscapeKey, handleClosePopups, handleClickOutside } from "./Utils.js";
 import { popupPhoto, handleOpenPopups } from "./Card.js";
 
 const popupProfile = document.querySelector("#popup-profile");
