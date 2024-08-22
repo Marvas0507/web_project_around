@@ -118,3 +118,4 @@ const profileFormValidator = new FormValidator(config, formProfile);
 profileFormValidator.enableValidation();
 const cardsFormValidator = new FormValidator(config, formCard);
 cardsFormValidator.enableValidation();
+let someStr = "Programé. Guardé. Empaqueté.";
