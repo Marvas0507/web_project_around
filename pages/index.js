@@ -1,7 +1,7 @@
-import Card from "./Card.js";
-import FormValidator from "./validation.js";
-import { handleEscapeKey, handleClosePopups, handleClickOutside } from "./Utils.js";
-import { popupPhoto, handleOpenPopups } from "./Card.js";
+import Card from "../scripts/Card.js";
+import FormValidator from "../scripts/validation.js";
+import { handleEscapeKey, handleClosePopups, handleClickOutside } from "../scripts/Utils.js";
+import { popupPhoto, handleOpenPopups } from "../scripts/Card.js";
 
 const popupProfile = document.querySelector("#popup-profile");
 const formProfile = document.querySelector("#form-profile");
@@ -119,3 +119,4 @@ profileFormValidator.enableValidation();
 const cardsFormValidator = new FormValidator(config, formCard);
 cardsFormValidator.enableValidation();
 let someStr = "Programé. Guardé. Empaqueté.";
+console.log("Hello, World!")
