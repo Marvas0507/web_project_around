@@ -51,12 +51,19 @@ const inputTitle = document.querySelector("#input-title");
 const inputUrl = document.querySelector("#input-url");
 const buttonClosePopupPhoto = document.querySelector("#popup-photo-close");
 
-const popupProfile = new PopupWithForm("#popup-profile", () => {
-    console.log("perfil")
+initialCards.forEach((item) => {
+    const initialCard = new Card(item.name, item.link).createCard();
+    cardArea.append(initialCard);
 });
 
-const  popupCards = new PopupWithForm("#popup-cards", () => {
-    console.log("imagen")
+const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
+    profileName.textContent = inputs.name;
+    profileAbout.textContent = inputs.about;
+});
+
+const  popupCards = new PopupWithForm("#popup-cards", (inputs) => {
+    const initialCard = new Card(inputs.title, inputs.link).createCard();
+    cardArea.prepend(initialCard);
 });
 
 popupProfile.setEventListeners();
@@ -77,13 +84,10 @@ popupCards.setEventListeners();
 //     cardArea.prepend(newCard);
 // }
 
-initialCards.forEach((item) => {
-    const initialCard = new Card(item.name, item.link).createCard();
-    cardArea.append(initialCard);
-});
 
-inputName.value = profileName.textContent;
-inputAbout.value = profileAbout.textContent;
+
+// inputName.value = profileName.textContent;
+// inputAbout.value = profileAbout.textContent;
 
 profileButton.addEventListener("click", () => {
     popupProfile.open();
@@ -102,21 +106,20 @@ cardClose.addEventListener("click", () => {
 });
 
 buttonClosePopupPhoto.addEventListener("click", () => {
-    handleClosePopups(popupPhoto);
+    popupCards.close();
 });
 
-document.addEventListener("keydown", (e) => {
-    popupProfile.close();
-    handleEscapeKey(e, popupCards);
-    handleEscapeKey(e, popupPhoto);
+document.addEventListener("keydown", () => {
+    popupProfile.handleEscClose();
+    popupCards.handleEscClose();
 });
 
 popupProfile.addEventListener("click", handleClickOutside);
 popupCards.addEventListener("click", handleClickOutside);
 popupPhoto.addEventListener("click", handleClickOutside);
 
-formProfile.addEventListener("submit", handleProfileFormSubmit);
-formCard.addEventListener("submit", handlePopupCardsSubmit);
+// formProfile.addEventListener("submit", handleProfileFormSubmit);
+// formCard.addEventListener("submit", handlePopupCardsSubmit);
 
 const config = {
     formSelector: ".form",
