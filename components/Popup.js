@@ -10,10 +10,21 @@ export default class Popup {
         this._popupElement.classList.remove("popup__show")
     }
     
-    handleEscClose(e) {
+    _handleEscClose(e) {
         if (e.key === "Escape") {
             this.close();
         }
+    }
+
+    setEventListeners() {
+        this._popupElement.querySelector("popup__button-close").addEventListener("click", () => {
+            this.close();
+        });
+        this._popupElement.addEventListener("mousedown", (e) => {
+            if (e.target.classList.contains("popup") && !e.target.closest("form")) {
+                this.close();
+            }
+        })
     }
 
 }
