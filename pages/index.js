@@ -109,10 +109,7 @@ buttonClosePopupPhoto.addEventListener("click", () => {
     popupCards.close();
 });
 
-document.addEventListener("keydown", () => {
-    popupProfile.handleEscClose();
-    popupCards.handleEscClose();
-});
+
 
 popupProfile.addEventListener("click", handleClickOutside);
 popupCards.addEventListener("click", handleClickOutside);
