@@ -111,9 +111,9 @@ buttonClosePopupPhoto.addEventListener("click", () => {
 
 
 
-popupProfile.addEventListener("click", handleClickOutside);
-popupCards.addEventListener("click", handleClickOutside);
-popupPhoto.addEventListener("click", handleClickOutside);
+// popupProfile.addEventListener("click", handleClickOutside);
+// popupCards.addEventListener("click", handleClickOutside);
+// popupPhoto.addEventListener("click", handleClickOutside);
 
 // formProfile.addEventListener("submit", handleProfileFormSubmit);
 // formCard.addEventListener("submit", handlePopupCardsSubmit);
