@@ -3,13 +3,9 @@ import FormValidator from "../scripts/validation.js";
 import { handleEscapeKey, handleClosePopups, handleClickOutside } from "../scripts/Utils.js";
 import { popupPhoto, handleOpenPopups } from "../scripts/Card.js";
 
-import Popup from "../components/Popup.js";
 import PopupWithForm from "../components/PopupWithForms.js";
 
-// const popupProfile = document.querySelector("#popup-profile");
 const formProfile = document.querySelector("#form-profile");
-const inputName = document.querySelector("#input-name");
-const inputAbout = document.querySelector("#input-about");
 const formClose = document.querySelector("#form-button-close");
 const profileName = document.querySelector(".profile__info-content-name");
 const profileAbout = document.querySelector(".profile__info-paragraph");
@@ -43,7 +39,6 @@ const initialCards = [
 ];
 
 const cardArea = document.querySelector(".element");
-// const popupCards = document.querySelector("#popup-cards");
 const formCard = document.querySelector("#form-cards");
 const cardButton = document.querySelector(".profile__button-add");
 const cardClose = document.querySelector("#card-button-close");
@@ -61,33 +56,15 @@ const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
     profileAbout.textContent = inputs.about;
 });
 
-const  popupCards = new PopupWithForm("#popup-cards", (inputs) => {
+popupProfile.setEventListeners();
+
+const popupCards = new PopupWithForm ("#popup-cards", (inputs) => {
     const initialCard = new Card(inputs.title, inputs.link).createCard();
     cardArea.prepend(initialCard);
 });
 
-popupProfile.setEventListeners();
-
 popupCards.setEventListeners();
 
-// function handleProfileFormSubmit(e) {
-//     e.preventDefault();
-//     profileName.textContent = inputName.value;
-//     profileAbout.textContent = inputAbout.value;
-//     popupProfile.classList.remove("popup__show");
-// }
-
-// function handlePopupCardsSubmit(e) {
-//     e.preventDefault();
-//     const newCard = new Card(inputTitle.value, inputUrl.value).createCard();
-//     handleClosePopups(popupCards);
-//     cardArea.prepend(newCard);
-// }
-
-
-
-// inputName.value = profileName.textContent;
-// inputAbout.value = profileAbout.textContent;
 
 profileButton.addEventListener("click", () => {
     popupProfile.open();
@@ -110,14 +87,6 @@ buttonClosePopupPhoto.addEventListener("click", () => {
 });
 
 
-
-// popupProfile.addEventListener("click", handleClickOutside);
-// popupCards.addEventListener("click", handleClickOutside);
-// popupPhoto.addEventListener("click", handleClickOutside);
-
-// formProfile.addEventListener("submit", handleProfileFormSubmit);
-// formCard.addEventListener("submit", handlePopupCardsSubmit);
-
 const config = {
     formSelector: ".form",
     inputSelector: ".form__content-input",
@@ -131,5 +100,3 @@ const profileFormValidator = new FormValidator(config, formProfile);
 profileFormValidator.enableValidation();
 const cardsFormValidator = new FormValidator(config, formCard);
 cardsFormValidator.enableValidation();
-// let someStr = "Programé. Guardé. Empaqueté.";
-// console.log("Hello, World!")
