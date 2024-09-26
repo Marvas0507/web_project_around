@@ -9,6 +9,7 @@ export default class Popup {
 
     open() {
         this._popupElement.classList.add("popup__show");
+        document.addEventListener("keydown", this._handleEscClose);
     }
 
     close () {
@@ -26,7 +27,7 @@ export default class Popup {
             this.close();
         });
         this._popupElement.addEventListener("click", (e) => {
-            if (e.target.className === "popup popup_show") {
+            if (e.target.className === "popup popup__show") {
               this.close();
             }
         });
