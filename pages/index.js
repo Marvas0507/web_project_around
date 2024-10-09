@@ -1,5 +1,5 @@
-import Card from "../scripts/Card.js";
-import FormValidator from "../scripts/validation.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
 // import { handleEscapeKey, handleClosePopups, handleClickOutside } from "../scripts/Utils.js";
 // import { popupPhoto, handleOpenPopups } from "../scripts/Card.js";
 
