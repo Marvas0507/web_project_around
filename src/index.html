@@ -13,15 +13,15 @@
         name="keywords"
         content="fotos, lagos, montañas, valles, viajes, app, EE.UU."
     >
-    <link rel="stylesheet" href="./pages/index.css">
+   
 </head>
 <body>
     <div class="page">
         <section class="header">
-            <img class="header__logo" src="./images/Vector.svg" alt="logo web"/>            
+            <img class="header__logo" src="<%=require('./images/Vector.svg') %>" alt="logo web"/>            
         </section>
         <section class="profile">
-            <img class="profile__avatar" src="./images/avatar.png" alt="your avatar"/>
+            <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="your avatar"/>
             <div class="profile__info">
                 <div class="profile__info-content">
                     <h1 class="profile__info-content-name">Jacques Cousteau</h1>
@@ -122,6 +122,6 @@
             <p class="footer__copyright">&#169; 2024. Marvin Vásquez</p>
         </section>
     </div>
-    <script src="./pages/index.js" type="module"></script>
+    
 </body>
 </html>

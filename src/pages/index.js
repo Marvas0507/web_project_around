@@ -1,3 +1,5 @@
+
+import './index.css';
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 // import { handleEscapeKey, handleClosePopups, handleClickOutside } from "../scripts/Utils.js";
@@ -5,6 +7,7 @@ import FormValidator from "../components/FormValidator.js";
 
 import PopupWithForm from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
+import Section from '../components/Section.js';
 
 // const popupProfile = document.querySelector("#popup-profile");
 const formProfile = document.querySelector("#form-profile");
@@ -51,10 +54,24 @@ const cardClose = document.querySelector("#card-button-close");
 // const inputUrl = document.querySelector("#input-url");
 const buttonClosePopupPhoto = document.querySelector("#popup-photo-close");
 
+const section  = new Section({
+    items: initialCards, 
+    renderer: function (item){
+            const initialCard = new Card(item.name, item.link, () => {popupImage.open({name: item.name, link: item.link});} ).createCard();
+            section.addItem(initialCard);
+        }
+    }, 
+'.element');
+
+section.renderItems();
+    
+
+    /*
 initialCards.forEach((item) => {
     const initialCard = new Card(item.name, item.link, () => {popupImage.open({name: item.name, link: item.link});} ).createCard();
     cardArea.append(initialCard);
 });
+*/
 
 const popupProfile = new PopupWithForm ("#popup-profile", (inputs) => {
     profileName.textContent = inputs.name;
