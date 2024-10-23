@@ -62,7 +62,7 @@ const popupProfile = new PopupWithForm ("#popup-profile", (inputs) => {
 popupProfile.setEventListeners();
 
 const popupCards = new PopupWithForm ("#popup-cards", (inputs) => {
-    const initialCard = new Card(inputs.title, inputs.link, ()=> { popupImage.open({ name: inputs.name, link: inputs.link });}).createCard();
+    const initialCard = new Card(inputs.title, inputs.link, ()=> { popupImage.open({ name: inputs.title, link: inputs.link });}).createCard();
     cardArea.prepend(initialCard);
 });
 

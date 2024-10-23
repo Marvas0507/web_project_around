@@ -1,11 +1,4 @@
-// export function handleOpenPopups(popup) {
-//     popup.classList.add("popup__show");
-// };
-
 const template = document.querySelector(".template__card");
-// export const popupPhoto = document.querySelector("#popup-photo");
-// export const popupPhotoImage = document.querySelector(".popup__content-image");
-// export const popupPhotoTitle = document.querySelector(".popup__content-title");
 
 export default class Card {
     constructor(name, link, handleImageClick) {
@@ -46,10 +39,6 @@ export default class Card {
         });
         this._cardImage.addEventListener("click", () => {
             this.handleImageClick();
-            // handleOpenPopups(popupPhoto);
-            // popupPhotoImage.src = this._link;
-            // popupPhotoImage.alt = this._name;
-            // popupPhotoTitle.textContent = this._name;
         });
     }
 
