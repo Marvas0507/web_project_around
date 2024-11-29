@@ -44,15 +44,34 @@ const cardButton = document.querySelector(".profile__button-add");
 const cardClose = document.querySelector("#card-button-close");
 const buttonClosePopupPhoto = document.querySelector("#popup-photo-close");
 
-const section  = new Section({
-    items: initialCards, 
-    renderer: function (item){
-        const initialCard = new Card(item.name, item.link, () => {popupImage.open({name: item.name, link: item.link});} ).createCard();
-        section.addItem(initialCard);
-    }
-}, '.element');
+let section = null;
 
-section.renderItems();    
+fetch("https://around-api.es.tripleten-services.com/v1/cards/",{
+    headers: {
+        authorization: "aca41053-935f-4980-ab7e-41af6eea4631"
+    }
+}).then(response => response.json()).then(cards => {
+    initialCards = new Section(
+        {
+            items: cards, 
+            renderer: function (item) {
+                const initialCard = new Card(item.name, item.link, () => {popupImage.open({name: item.name, link: item.link});} ).createCard();
+                section.addItem(initialCard);
+            }, 
+        },'.element'
+    );
+    initialCards.renderItems();
+})
+
+// const section  = new Section({
+//     items: initialCards, 
+//     renderer: function (item){
+//         const initialCard = new Card(item.name, item.link, () => {popupImage.open({name: item.name, link: item.link});} ).createCard();
+//         section.addItem(initialCard);
+//     }
+// }, '.element');
+
+// section.renderItems();    
 
 const popupProfile = new PopupWithForm ("#popup-profile", (inputs) => {
     profileName.textContent = inputs.name;
