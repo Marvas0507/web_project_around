@@ -18,10 +18,20 @@
 <body>
     <div class="page">
         <section class="header">
-            <img class="header__logo" src="<%=require('./images/Vector.svg') %>" alt="logo web"/>            
+            <img class="header__logo" 
+                src="<%=require('./images/Vector.svg') %>" 
+                alt="logo web"
+            />            
         </section>
         <section class="profile">
-            <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="your avatar"/>
+            <div class="profile__avatar">
+                <img 
+                class="profile__avatar-image" 
+                src="<%=require('./images/avatar.png')%>" 
+                alt="your avatar"
+                />
+                <button class="profile__avatar-button-edit" type="button"></button>
+            </div>            
             <div class="profile__info">
                 <div class="profile__info-content">
                     <h1 class="profile__info-content-name">Jacques Cousteau</h1>
