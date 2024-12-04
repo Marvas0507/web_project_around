@@ -20,4 +20,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "liveServer.settings.port": 5502
+  "CodeGPT.apikey": "CodeGPT Plus Beta"
 }
