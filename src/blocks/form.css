@@ -1,90 +1,86 @@
-.form__title{
-    margin: 34px auto;
-    color: black;
+.form__title {
+  margin: 34px auto 0;
+  color: black;
 }
-.form__content{
-    display: flex;
-    flex-direction: column;
+.form__content {
+  display: flex;
+  flex-direction: column;
 }
-.form__content-input{
-    color: black;
-    padding-bottom: 13px;
-    margin: auto;
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.94px;
-    border: none;
-    border-bottom: 1px solid #C4C4C4;
+.form__content-input {
+  color: black;
+  padding-bottom: 13px;
+  margin: auto;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  margin-top: 34px;
 }
-.form__content-input::placeholder{
-    color: #C4C4C4;
+.form__content-input::placeholder {
+  color: #c4c4c4;
 }
-.form__content-input:last-of-type{
-    margin-top: 34px;
+.form__content-input_type_error {
+  border-bottom: 2px solid #ff0000;
 }
-.form__content-input_type_error{
-    border-bottom: 2px solid #ff0000;
+.form__button {
+  margin: 34px auto;
+  padding: 13px 0;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
 }
-.form__button{
-    margin: 34px auto;
-    padding: 13px 0;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    border: none;
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 21.78px;
-    text-align: center;
+.form__button:hover {
+  opacity: 50%;
 }
-.form__button:hover{
-    opacity: 50%;
-}
-.form__button_disabled{
-background-color: #fff;
+.form__button_disabled {
+  background-color: #fff;
   color: #ccc;
   border: 1px solid #ccc;
   pointer-events: none;
 }
-.form__error-message{
-    color: #ff0000;
-    font-family: "Inter regular";
-    font-size: 12px;
-    margin: 0 48px;
+.form__error-message {
+  color: #ff0000;
+  font-family: "Inter regular";
+  font-size: 12px;
+  margin: 0 48px;
 }
 
-@media screen and (max-width:2560px) and (min-width:768px) {
-    .form__title{
-        width: 330px;
-        font-family: Inter;
-        font-size: 24px;
-        font-weight: 900;
-        line-height: 29.05px;
-    }
-    .form__content-input{
-        width: 330px;
-    }
-    .form__button{
-        width: 330px;
-    }
-
+@media screen and (max-width: 2560px) and (min-width: 768px) {
+  .form__title {
+    width: 330px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29.05px;
+  }
+  .form__content-input {
+    width: 330px;
+  }
+  .form__button {
+    width: 330px;
+  }
 }
 
-
-@media screen and (max-width:767px) and (min-width:320px) {
-    .form__title{
-        width: 238px;
-        font-family: Inter;
-        font-size: 18px;
-        font-weight: 900;
-        line-height: 21.78px;
-    }
-    .form__content-input{
-        width: 238px;
-    }
-    .form__button{
-        width: 238px;
-    }
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .form__title {
+    width: 238px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.78px;
+  }
+  .form__content-input {
+    width: 238px;
+  }
+  .form__button {
+    width: 238px;
+  }
 }
