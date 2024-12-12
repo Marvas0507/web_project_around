@@ -3,8 +3,23 @@ import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
+import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
-
+import Api from "../components/Api.js";
+// import {
+//   formProfile,
+//   profileName,
+//   profileAbout,
+//   profileButton,
+//   formClose,
+//   cardArea,
+//   formCard,
+//   cardButton,
+//   cardClose,
+//   buttonClosePopupPhoto,
+//   config,
+// } from "../scripts/Utils.js";
 const formProfile = document.querySelector("#form-profile");
 const formClose = document.querySelector("#form-button-close");
 const profileName = document.querySelector(".profile__info-content-name");
@@ -51,7 +66,7 @@ const section = new Section(
     items: initialCards,
     renderer: function (item) {
       const initialCard = new Card(item.name, item.link, () => {
-        popupImage.open({ name: item.name, link: item.link });
+        popupImage.handleopen({ name: item.name, link: item.link });
       }).createCard();
       section.addItem(initialCard);
     },
@@ -70,7 +85,7 @@ popupProfile.setEventListeners();
 
 const popupCards = new PopupWithForm("#popup-cards", (inputs) => {
   const initialCard = new Card(inputs.title, inputs.link, () => {
-    popupImage.open({ name: inputs.title, link: inputs.link });
+    popupImage.handleopen({ name: inputs.title, link: inputs.link });
   }).createCard();
   cardArea.prepend(initialCard);
 });
@@ -80,23 +95,23 @@ popupCards.setEventListeners();
 const popupImage = new PopupWithImage("#popup-photo");
 
 profileButton.addEventListener("click", () => {
-  popupProfile.open();
+  popupProfile.handleOpen();
 });
 
 cardButton.addEventListener("click", () => {
-  popupCards.open();
+  popupCards.handleOpen();
 });
 
 formClose.addEventListener("click", () => {
-  popupProfile.close();
+  popupProfile.handleClose();
 });
 
 cardClose.addEventListener("click", () => {
-  popupCards.close();
+  popupCards.handleClose();
 });
 
 buttonClosePopupPhoto.addEventListener("click", () => {
-  popupCards.close();
+  popupCards.handleClose();
 });
 
 popupImage.setEventListeners();
