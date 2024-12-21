@@ -7,6 +7,8 @@ import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
 import Api from "../components/Api.js";
+import UserInfo from "../components/UserInfo.js";
+
 // import {
 //   formProfile,
 //   profileName,
@@ -20,6 +22,7 @@ import Api from "../components/Api.js";
 //   buttonClosePopupPhoto,
 //   config,
 // } from "../scripts/Utils.js";
+
 const formProfile = document.querySelector("#form-profile");
 const formClose = document.querySelector("#form-button-close");
 const profileName = document.querySelector(".profile__info-content-name");
@@ -61,20 +64,72 @@ const cardButton = document.querySelector(".profile__button-add");
 const cardClose = document.querySelector("#card-button-close");
 const buttonClosePopupPhoto = document.querySelector("#popup-photo-close");
 
-const section = new Section(
-  {
-    items: initialCards,
-    renderer: function (item) {
-      const initialCard = new Card(item.name, item.link, () => {
-        popupImage.handleopen({ name: item.name, link: item.link });
-      }).createCard();
-      section.addItem(initialCard);
-    },
-  },
-  ".element"
-);
+inputNameUser.value = profileName.textContent;
+inputAboutUser.value = profileAbout.textContent;
 
-section.renderItems();
+const userInfo = new UserInfo({
+  nameSelector: ".profile__info-content-name",
+  aboutSelector: ".profile__info-paragraph",
+  avatarSelector: ".profile__avatar-image",
+});
+
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web_es_17",
+  Headers: {
+    authorization: "aca41053-935f-4980-ab7e-41af6eea4631",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getUserInfo().then((result) => {
+  userInfo.setUserInfo(result);
+  api.getInitialCards().then((result) => {
+    const cardList = new Section(
+      {
+        items: result,
+        render: (item) => {
+          const cardList = new Card(
+            item,
+            userInfo._userId,
+            (cardId) => api.addLike(cardId),
+            (cardId) => api.removeLike(cardId),
+            popupImage.handleOpen,
+            () => {
+              PopupWithConfirmation.handleOpen(result._id);
+            }
+          );
+          const cardElement = newCard.createCard();
+          cardList.addItem(cardElement);
+        },
+      },
+      ".element"
+    );
+    cardList.renderItems();
+  });
+});
+
+const popupCards = new PopupWithForm("#popup-cards", (inputs, onClose) => {
+  api.addCard(inputs).then((result) => {
+    const newCard = new Card(
+      result,
+      userInfo._userId,
+      (cardId) => api.addLike(cardId),
+      (cardId) => api.removeLike(cardId),
+      popupImage.handleOpen,
+      () => {
+        PopupWithConfirmation.handleOpen(result._id);
+      }
+    );
+    const newCardElement = newCard.createCard();
+    cardArea.prepend(newCardElement);
+    popupCards.handleClose;
+    onClose();
+  });
+});
+popupCards.setEventListeners();
+
+const popupImage = new PopupWithImage("#popup-photo");
+popupImage.setEventListeners();
 
 const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
   profileName.textContent = inputs.name;
@@ -83,16 +138,20 @@ const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
 
 popupProfile.setEventListeners();
 
-const popupCards = new PopupWithForm("#popup-cards", (inputs) => {
-  const initialCard = new Card(inputs.title, inputs.link, () => {
-    popupImage.handleopen({ name: inputs.title, link: inputs.link });
-  }).createCard();
-  cardArea.prepend(initialCard);
-});
+// const section = new Section(
+//   {
+//     items: initialCards,
+//     renderer: function (item) {
+//       const initialCard = new Card(item.name, item.link, () => {
+//         popupImage.handleopen({ name: item.name, link: item.link });
+//       }).createCard();
+//       section.addItem(initialCard);
+//     },
+//   },
+//   ".element"
+// );
 
-popupCards.setEventListeners();
-
-const popupImage = new PopupWithImage("#popup-photo");
+// section.renderItems();
 
 profileButton.addEventListener("click", () => {
   popupProfile.handleOpen();
