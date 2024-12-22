@@ -1,7 +1,7 @@
 export default class Api {
-  constructor({ baseUrl, headers }) {
-    this._baseUrl = baseUrl;
-    this._headers = headers;
+  constructor({ options }) {
+    this._baseUrl = options.baseUrl;
+    this._headers = options.headers;
   }
 
   // Obtener información del usuario
@@ -39,7 +39,7 @@ export default class Api {
   }
 
   // Actualizar perfil del usuario
-  updateUserProfile(data) {
+  editProfile(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
@@ -60,7 +60,7 @@ export default class Api {
   }
 
   // Añadir una nueva tarjeta
-  addNewCard(data) {
+  addCard(data) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
@@ -81,7 +81,7 @@ export default class Api {
   }
 
   // Dar "me gusta" a una tarjeta
-  likeCard(cardId) {
+  addLike(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "PUT",
       headers: this._headers,
@@ -98,7 +98,7 @@ export default class Api {
   }
 
   // Quitar "me gusta" de una tarjeta
-  dislikeCard(cardId) {
+  removeLike(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
@@ -132,7 +132,7 @@ export default class Api {
   }
 
   // Método para actualizar el avatar del usuario
-  updateUserAvatar(data) {
+  editAvatarProfile(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,

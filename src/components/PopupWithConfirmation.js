@@ -18,12 +18,12 @@ export default class PopupWithConfirmation extends Popup {
     });
   }
 
-  handleopen(cardId) {
+  handleOpen(cardId) {
     this.cardId = cardId;
     super.handleOpen();
   }
 
-  handleclose() {
+  handleClose() {
     super.handleClose();
   }
 }
