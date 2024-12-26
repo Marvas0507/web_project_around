@@ -30,7 +30,7 @@ export default class Card {
   _setProperties() {
     this._cardImage = this._card.querySelector(".element__image");
     this._cardTitle = this._card.querySelector(".element__content-title");
-    this._likeButton = this._card.querySelector("element__content-like");
+    this._likeButton = this._card.querySelector(".element__content-like");
     this._likeCounter = this._card.querySelector(
       ".element__content-number-like"
     );

@@ -12,7 +12,7 @@ const profileButton = document.querySelector(
 const profileAvatarContainer = document.querySelector(".profile__avatar");
 const profileAvatarForm = document.querySelector("#popup-avatar");
 
-const cardArea = document.querySelector(".element");
+const cardArea = document.querySelector(".cards");
 
 const popupCardsForm = document.querySelector(".form-cards");
 const addCardsButton = document.querySelector(".profile__button-add");
