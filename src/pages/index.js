@@ -28,7 +28,7 @@ inputAboutUser.value = profileAbout.textContent;
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__info-content-name",
-  aboutSelector: ".profile__info-paragraph",
+  jobSelector: ".profile__info-paragraph",
   avatarSelector: ".profile__avatar-image",
 });
 

@@ -14,6 +14,7 @@
       content="fotos, lagos, montañas, valles, viajes, app, EE.UU."
     />
   </head>
+
   <body class="page">
     <header class="header">
       <img
@@ -21,59 +22,43 @@
         src="<%=require('./images/Vector.svg') %>"
         alt="logo web"
       />
-      <!-- <div class="popup" id="popup-avatar">
-          <div class="popup__content">
-            <button class="popup__button-close" id="card-button-close"></button>
-            <form class="form popup__add-image-avatar" id="change-avatar">
-              <h2 class="form__title">Cambiar foto de perfil</h2>
-              <div class="form__content">
-                <input
-                  class="form__content-input"
-                  type="url"
-                  placeholder="Enlace a la imagen"
-                  id="input-avatar"
-                  name="avatar"
-                  required
-                />
-                <span class="form__error-message input-avatar-error"></span>
-              </div>
-              <button class="form__button" type="submit">Guardar</button>
-            </form>
-          </div>
-        </div> -->
     </header>
 
     <main class="content">
       <section class="profile">
-        <div class="profile__avatar">
+        <div class="profile__avatar-cointainer">
           <img
-            class="profile__avatar-image"
+            class="profile__image"
             src="<%=require('./images/avatar.png')%>"
             alt="your avatar"
           />
-          <button class="profile__avatar-button-edit" type="button"></button>
+          <button
+            class="profile__avatar-button-edit"
+            type="button"
+            title="editar-foto-perfil"
+          ></button>
         </div>
-        <div class="profile__info">
-          <div class="profile__info-content">
-            <h1 class="profile__info-content-name">Jacques Cousteau</h1>
-            <div class="profile__info-content-add-button"></div>
+        <div class="profile__info-cointainer">
+          <div class="profile__name-cointainer">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <div class="profile__edit-button"></div>
           </div>
-          <p class="profile__info-paragraph">Explorador</p>
+          <p class="profile__about">Explorador</p>
         </div>
-        <div class="profile__button-add"></div>
+        <div class="profile__add-button"></div>
       </section>
 
       <section class="cards"></section>
 
       <template class="template__card">
-        <article class="element__card">
-          <img src="  " class="element__image" alt=" " />
-          <div class="element__button-delete"></div>
-          <div class="element__content">
-            <h3 class="element__content-title"></h3>
-            <div class="element__content-like" id="like"></div>
-            <span class=".element__content-number-like"></span>
-          </div>
+        <article class="card">
+          <img id="card-image" class="card__image" alt=" " />
+          <h2 class="card__title"></h2>
+          <div class="card__icon card__icon-type-delete"></div>
+          <div class="card__like-cointainer"></div>
+            <div class="card__icon card__icon_type_like" id="like"></div>
+            <span class="card__like-number"></span>
+          </div>          
         </article>
       </template>
     </main>
@@ -82,9 +67,9 @@
       <p class="footer__copyright">&#169; 2024. Marvin Vásquez</p>
     </footer>
 
-    <section class="popup" id="popup-avatar-profile">
+    <!-- <section class="popup" id="popup-avatar-profile">
       <div class="popup__content">
-        <div class="popup__button-close" id="card-button-close"></div>
+        <div class="popup__button-close"></div>
         <form class="form popup__add-image-avatar" id="change-avatar">
           <h2 class="form__title">Cambiar foto de perfil</h2>
           <div class="form__content">
@@ -189,6 +174,111 @@
           </div>
         </form>
       </div>
+    </section> -->
+
+    <section class="popup" id="popup-avatar-profile">
+      <div class="popup__content">
+        <div class="popup__button-close"></div>
+        <h2 class="popup__title">Cambiar foto de perfil</h2>
+        <form name="profile-avatar-form" class="popup__form popup__form_avatar-profile">
+          <input 
+          type="url"
+          class="popup__form-input popup__form-input_type_link"
+          id="avatar-link"
+          name="avatarLink"
+          placeholder="Enlace de una imagen"
+          required>
+          <span class="popup__form-error-message avatar-link-error"></span>
+          <button type="submit" value="submit" class="popup__form-button">
+            Guardar
+          </button>
+        </form>
+      </div>
     </section>
+
+    <section class="popup" id="popup-profile">
+      <div class="popup__content">
+        <div class="popup__button-close"></div>
+        <h2 class="popup__title">Editar perfil</h2>
+        <form name="edit-profile-form" class="popup__form popup__form_profile">
+          <input 
+          type="text"
+          class="popup__form-input popup__form-input_type_name"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          minlength="2"
+          maxlength="40"
+          required>
+          <span class="popup__form-error-message name-error"></span>
+
+          <input 
+          type="text"
+          class="popup__form-input popup__form-input_type_about"
+          id="about"
+          name="about"
+          placeholder="description"
+          minlength="2"
+          maxlength="200"
+          required>
+          <span class="popup__form-error-message about-error"></span>
+          <button type="submit" value="submit" class="popup__form-button">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup" id="popup-cards">
+      <div class="popup__content">
+        <div class="popup__button-close"></div>
+        <h2 class="popup__title">Nuevo lugar</h2>
+        <form name="add-card-form" class="popup__form  popup__form_cards">
+          <input 
+          type="text"
+          class="popup__form-input popup__form-input_type_place"
+          id="place-title"
+          name="name"
+          placeholder="Title"
+          minlength="2"
+          maxlength="30"
+          required>
+          <span class="popup__form-error-message place-title-error"></span>
+
+          <input 
+          type="url"
+          class="popup__form-input popup__form-input_type_link"
+          id="image-link"
+          name="link"
+          placeholder="url of imagen"
+          required>
+          <span class="popup__form-error-message image-link-error"></span>
+          <button type="submit" value="submit" class="popup__form-button">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup" id="popup-photo">
+      <div class="popup__content popup__content_type_popup_photo">
+        <div class="popup__button-close"></div>
+        <img src="" alt="" class="popup__content-image">
+        <h2 class="popup__subtitle"></h2>        
+      </div>
+    </section>
+
+    <section class="popup" id="popup-delete-confirmation">
+      <div class="popup__content popup__content_type_popup_delete">
+        <div class="popup__button-close"></div>
+        <h2 class="popup__title">¿Estás segura/o?</h2>
+        <form name="" class="popup__form">
+          <button type="submit" value="submit" class="popup__form-button">
+            Sí
+          </button>
+        </form>
+      </div>
+    </section>
+
   </body>
 </html>
