@@ -9,12 +9,12 @@ import Section from "../components/Section.js";
 import Api from "../components/Api.js";
 
 import {
-  formProfile,
+  popupProfileForm,
   inputNameUser,
   inputAboutUser,
   profileName,
   profileAbout,
-  profileButton,
+  profileEditButton,
   profileAvatarContainer,
   profileAvatarForm,
   cardArea,
@@ -27,9 +27,9 @@ inputNameUser.value = profileName.textContent;
 inputAboutUser.value = profileAbout.textContent;
 
 const userInfo = new UserInfo({
-  nameSelector: ".profile__info-content-name",
-  jobSelector: ".profile__info-paragraph",
-  avatarSelector: ".profile__avatar-image",
+  nameSelector: ".profile__name",
+  jobSelector: ".profile__about",
+  avatarSelector: ".profile__image",
 });
 
 const api = new Api({
@@ -61,7 +61,7 @@ api.getUserInfo().then((result) => {
           cardList.addItem(cardElement);
         },
       },
-      ".element"
+      ".cards"
     );
     cardList.renderItems();
   });
@@ -99,12 +99,15 @@ const popupProfile = new PopupWithForm("#popup-profile", (inputs, onClose) => {
 });
 popupProfile.setEventListeners();
 
-const popupAvatarProfile = new PopupWithForm("#popup-avatar", (inputs) => {
-  api.editAvatarProfile(inputs).then((result) => {
-    userInfo.setUserInfo(result);
-    popupAvatarProfile.handleClose();
-  });
-});
+const popupAvatarProfile = new PopupWithForm(
+  "#popup-avatar-profile",
+  (inputs) => {
+    api.editAvatarProfile(inputs).then((result) => {
+      userInfo.setUserInfo(result);
+      popupAvatarProfile.handleClose();
+    });
+  }
+);
 popupAvatarProfile.setEventListeners();
 
 const popupWithConfirmation = new PopupWithConfirmation(
@@ -119,9 +122,9 @@ const popupWithConfirmation = new PopupWithConfirmation(
 );
 popupWithConfirmation.setEventListeners();
 
-profileButton.addEventListener("click", () => {
+profileEditButton.addEventListener("click", () => {
   popupProfile.handleOpen(profileName.textContent, profileAbout.textContent);
-  const profileFormValidator = new FormValidator(config, formProfile);
+  const profileFormValidator = new FormValidator(config, popupProfileForm);
   profileFormValidator.enableValidation();
 });
 

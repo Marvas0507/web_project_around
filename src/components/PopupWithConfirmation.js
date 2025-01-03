@@ -5,7 +5,7 @@ export default class PopupWithConfirmation extends Popup {
     super(popupSelector);
     this._handleConfirmation = handleConfirmation;
     this._formElement = this._popupElement.querySelector(
-      ".popup__delete-cards"
+      ".popup__form_delete-confirmation"
     );
     this.cardId = "";
   }

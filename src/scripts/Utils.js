@@ -1,38 +1,36 @@
-const formProfile = document.querySelector("#form-profile");
-const inputNameUser = document.querySelector(".form__content-input_type_name");
-const inputAboutUser = document.querySelector(
-  ".form__content-input_type_about"
-);
+const popupProfileForm = document.querySelector(".popup__form_profile");
+const inputNameUser = document.querySelector(".popup__form-input_type_name");
+const inputAboutUser = document.querySelector(".popup__form-input_type_about");
 
-const profileName = document.querySelector(".profile__info-content-name");
-const profileAbout = document.querySelector(".profile__info-paragraph");
-const profileButton = document.querySelector(
-  ".profile__info-content-add-button"
+const profileName = document.querySelector(".profile__name");
+const profileAbout = document.querySelector(".profile__about");
+const profileEditButton = document.querySelector(".profile__edit-button");
+const profileAvatarContainer = document.querySelector(
+  ".profile__avatar-cointainer"
 );
-const profileAvatarContainer = document.querySelector(".profile__avatar");
-const profileAvatarForm = document.querySelector("#popup-avatar");
+const profileAvatarForm = document.querySelector(".popup__form_avatar-profile");
 
 const cardArea = document.querySelector(".cards");
 
-const popupCardsForm = document.querySelector(".form-cards");
-const addCardsButton = document.querySelector(".profile__button-add");
+const popupCardsForm = document.querySelector(".popup__form_cards");
+const addCardsButton = document.querySelector(".profile__add-button");
 
 const config = {
-  formSelector: ".form",
-  inputSelector: ".form__content-input",
-  submitButtonSelector: ".form__button",
+  formSelector: ".popup__form",
+  inputSelector: ".popup__form-input",
+  submitButtonSelector: ".popup__form-button",
   inactiveButtonClass: "form__button_disabled",
   inputErrorClass: "form__content-input_type_error",
-  inputErrorMessageClass: "form__error-message",
+  inputErrorMessageClass: "popup__form-error-message",
 };
 
 export {
-  formProfile,
+  popupProfileForm,
   inputNameUser,
   inputAboutUser,
   profileName,
   profileAbout,
-  profileButton,
+  profileEditButton,
   profileAvatarContainer,
   profileAvatarForm,
   cardArea,

@@ -22,25 +22,21 @@ export default class Card {
   }
 
   _getTemplate() {
-    return this._cardTemplate
-      .cloneNode(true)
-      .content.querySelector(".element__card");
+    return this._cardTemplate.cloneNode(true).content.querySelector(".card");
   }
 
   _setProperties() {
-    this._cardImage = this._card.querySelector(".element__image");
-    this._cardTitle = this._card.querySelector(".element__content-title");
-    this._likeButton = this._card.querySelector(".element__content-like");
-    this._likeCounter = this._card.querySelector(
-      ".element__content-number-like"
-    );
+    this._cardImage = this._card.querySelector(".card__image");
+    this._cardTitle = this._card.querySelector(".card__title");
+    this._likeButton = this._card.querySelector(".card__icon_type_like");
+    this._likeCounter = this._card.querySelector(".card__like-number");
     this._likeCounter.textContent = this._likes.length;
-    this._deleteButton = this._card.querySelector(".element__button-delete");
+    this._deleteButton = this._card.querySelector(".card__icon_type_delete");
     this._cardImage.src = this._link;
     this._cardTitle.textContent = this._name;
     this._cardImage.alt = this._name;
     if (this._likes.some((item) => item._id === this._userId)) {
-      this._likeButton.classList.toggle("element__content-like-active");
+      this._likeButton.classList.toggle("card__icon_type_like-active");
     }
     if (this._owner._id !== this._userId) {
       this._deleteButton.remove();
@@ -63,12 +59,12 @@ export default class Card {
         this._handleUnlikeCard(this._cardId).then((cardWithLike) => {
           this._changeLikeCounter(cardWithLike.likes);
         });
-        this._likeButton.classList.toggle("element__content-like-active");
+        this._likeButton.classList.toggle("card__icon_type_like-active");
       } else {
         this._handleLikeCard(this._cardId).then((cardWithLike) => {
           this._changeLikeCounter(cardWithLike.likes);
         });
-        this._likeButton.classList.toggle("element__content-like-active");
+        this._likeButton.classList.toggle("card__icon_type_like-active");
       }
     });
     this._deleteButton.addEventListener("click", () => {

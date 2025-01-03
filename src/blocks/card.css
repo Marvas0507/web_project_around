@@ -7,7 +7,7 @@
   margin: 50px auto;
 }
 
-.element__card {
+.card {
   max-width: 282px;
   position: relative;
   display: flex;
@@ -16,7 +16,7 @@
   border-radius: 10px;
 }
 
-.element__image {
+.card__image {
   width: 282px;
   height: 282px;
   border-radius: 10px 10px 0 0;
