@@ -54,7 +54,7 @@ api.getUserInfo().then((result) => {
             (cardId) => api.removeLike(cardId),
             popupImage.handleOpen,
             () => {
-              popupWithConfirmation.handleOpen(result._id);
+              popupWithConfirmation.handleOpen(item._id);
             }
           );
           const cardElement = card.createCard();

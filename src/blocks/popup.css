@@ -19,8 +19,12 @@
   z-index: 3;
   margin: auto;
   display: flex;
-  gap: 10px;
+  gap: 30px;
   flex-direction: column;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 30px;
 }
 
 .popup__button-close {
@@ -36,6 +40,26 @@
   opacity: 50%;
 }
 
+.popup__title {
+  font-family: Inter;
+  margin: 0;
+  font-size: 24px;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup__form-input {
+  border-bottom: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Inter;
+  font-size: 14px;
+}
+
 .popup__add-info {
   background-color: white;
   width: 100%;
@@ -48,12 +72,6 @@
   max-width: 75vw;
   max-height: 75vh;
   border-radius: 15px;
-}
-
-.popup__content-title {
-  font-family: Inter;
-  margin: 0;
-  font-size: 18px;
 }
 
 .popup__delete-cards {
@@ -74,7 +92,7 @@
 
 @media screen and (max-width: 2560px) and (min-width: 768px) {
   .popup__content {
-    min-width: 430px;
+    min-width: 370px;
   }
   .popup__button-close {
     width: 40px;
