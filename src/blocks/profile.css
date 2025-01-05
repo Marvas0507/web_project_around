@@ -11,6 +11,7 @@
   height: 120px;
   border-radius: 100%;
   cursor: pointer;
+  background-repeat: no-repeat;
 }
 
 .profile__avatar-button-edit {

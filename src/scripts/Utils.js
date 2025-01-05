@@ -19,8 +19,8 @@ const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__form-input",
   submitButtonSelector: ".popup__form-button",
-  inactiveButtonClass: "form__button_disabled",
-  inputErrorClass: "form__content-input_type_error",
+  inactiveButtonClass: "popup__form-button_disabled",
+  inputErrorClass: "popup__form-input_type_error",
   inputErrorMessageClass: "popup__form-error-message",
 };
 

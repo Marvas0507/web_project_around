@@ -47,53 +47,88 @@
 }
 
 .popup__form {
+  width: 370px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .popup__form-input {
-  border-bottom: 1px solid #000000;
-  border-radius: 5px;
-  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 10px 0px;
   font-family: Inter;
   font-size: 14px;
 }
 
-.popup__add-info {
-  background-color: white;
+.popup__form-input:focus {
+  outline: none;
+}
+
+.popup__form-input::placeholder {
+  color: #c4c4c4;
+}
+
+.popup__form-error-message {
+  color: #ff0000;
+  font-family: "Inter regular";
+  font-size: 12px;
+}
+
+.popup__form-input_type_error {
+  border-bottom: 2px solid #ff0000;
+}
+
+.popup__form-button {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
+  margin-top: 34px;
+  padding: 10px 0;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
+}
+
+.popup__form-button:hover {
+  opacity: 50%;
+}
+
+.popup__form-button_disabled {
+  background-color: #fff;
+  color: #ccc;
+  border: 1px solid #ccc;
+  pointer-events: none;
+}
+
+.popup__container_type_popup_photo {
+  background-color: transparent;
+  gap: 10px;
+  max-width: 75vw;
+  max-height: 75vh;
+  padding: 0;
 }
 
 .popup__content-image {
-  max-width: 75vw;
-  max-height: 75vh;
-  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.popup__delete-cards {
-  background-color: white;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-}
-
-.popup__add-image-avatar {
-  background-color: white;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
+.popup__subtitle {
+  font-family: Inter;
+  font-size: 18px;
+  margin: 0;
 }
 
 @media screen and (max-width: 2560px) and (min-width: 768px) {
-  .popup__content {
+  /* .popup__content {
     min-width: 370px;
-  }
+  } */
   .popup__button-close {
     width: 40px;
     aspect-ratio: 1 / 1;

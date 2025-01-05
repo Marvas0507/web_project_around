@@ -20,6 +20,7 @@
   width: 282px;
   height: 282px;
   border-radius: 10px 10px 0 0;
+  cursor: pointer;
 }
 
 .element__button-delete {
@@ -39,15 +40,21 @@
   opacity: 50%;
 }
 
-.element__content {
+.card__cointainer {
   max-width: 282px;
-  padding: 28px 18px;
+  padding: 25px 18px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.element__content-title {
+.card__cointainer-like {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card__title {
   color: black;
   margin: 0;
   font-family: Inter;
@@ -59,25 +66,32 @@
   overflow: hidden;
 }
 
-.element__content-like {
+.card__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.card__icon:hover {
+  opacity: 50%;
+}
+
+.card__icon_type_like {
   background-color: white;
   border: none;
   cursor: pointer;
-  width: 21px;
-  height: 19px;
   margin: auto 0;
+  background-repeat: no-repeat;
   background-image: url(../images/like.png);
 }
 
-.element__content-number-like {
-  font-family: "Inter medium 500", Arial, sans-serif;
-  font-size: 1.2rem;
+.card__like-number {
+  margin: auto 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  color: black;
 }
 
-.element__content-like-active {
+.card__icon_type_like-active {
   background-image: url(../images/like-active.png);
-}
-
-.element__content-like:hover {
-  opacity: 50%;
 }
