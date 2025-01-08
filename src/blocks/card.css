@@ -23,23 +23,6 @@
   cursor: pointer;
 }
 
-.element__button-delete {
-  z-index: 1;
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  border: none;
-  cursor: pointer;
-  width: 18px;
-  height: 19.3px;
-  background-color: transparent;
-  background-image: url(../images/Trash.png);
-}
-
-.element__button-delete:hover {
-  opacity: 50%;
-}
-
 .card__cointainer {
   max-width: 282px;
   padding: 25px 18px;
@@ -94,4 +77,16 @@
 
 .card__icon_type_like-active {
   background-image: url(../images/like-active.png);
+}
+
+.card__icon_type_delete {
+  z-index: 1;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 18px;
+  top: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url(../images/Trash.png);
 }

@@ -1,5 +1,8 @@
 .profile {
   margin: 40px auto 0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .profile__avatar-cointainer {
@@ -16,9 +19,9 @@
 
 .profile__avatar-button-edit {
   position: absolute;
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   background-image: url("../images/Edit-Avatar.png");
   background-color: transparent;
   border: none;
@@ -27,6 +30,7 @@
   margin: auto;
   background-repeat: no-repeat;
   opacity: 0;
+  z-index: 1;
 }
 
 .profile__avatar-cointainer:hover .profile__image {
@@ -51,6 +55,9 @@
 
 .profile__name {
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__edit-button {
@@ -68,7 +75,9 @@
 }
 
 .profile__about {
-  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__add-button {
@@ -93,13 +102,15 @@
     margin: auto auto auto 30px;
   }
   .profile__name {
+    max-width: 500px;
     font-family: Inter;
     font-size: 42px;
     font-weight: 500;
     line-height: 56px;
   }
   .profile__about {
-    margin: 16px 0 0;
+    max-width: 540px;
+    margin: 16px auto 0 0;
     font-family: Inter;
     font-size: 18px;
     font-weight: 400;
@@ -117,23 +128,25 @@
     display: flex;
     flex-direction: row;
   }
-  .profile__info {
+  .profile__info-cointainer {
     margin: auto auto auto 30px;
   }
   .profile__name {
+    max-width: 200px;
     font-family: Inter;
     font-size: 22px;
     font-weight: 500;
     line-height: 56px;
   }
   .profile__about {
-    margin: 16px 0 0;
+    max-width: 250px;
+    margin: 16px auto 0 0;
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
   }
-  .profile__button-add {
+  .profile__add-button {
     width: 150px;
     margin: auto 0;
   }
@@ -144,27 +157,34 @@
     max-width: 282px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
-  .profile__avatar {
+  .profile__image {
+    margin: 0 auto;
+  }
+  .profile__info-cointainer {
     margin: auto;
   }
-  .profile__info {
-    margin: auto;
+
+  .profile__name-cointainer {
+    max-width: 282px;
   }
   .profile__name {
+    max-width: 240px;
     font-family: Inter;
     font-size: 22px;
     font-weight: 500;
     line-height: 56px;
   }
   .profile__about {
-    margin: 0 auto 36px;
+    max-width: 282px;
+    margin: 0 auto;
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
   }
-  .profile__button-add {
+  .profile__add-button {
     width: 282px;
     background-size: 282px 50px;
   }
