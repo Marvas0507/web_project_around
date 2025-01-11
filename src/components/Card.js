@@ -38,6 +38,7 @@ export default class Card {
     if (this._likes.some((item) => item._id === this._userId)) {
       this._likeButton.classList.toggle("card__icon_type_like-active");
     }
+    console.log(this._owner._id, this._userId);
     if (this._owner._id !== this._userId) {
       this._deleteButton.remove();
     }

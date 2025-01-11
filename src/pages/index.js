@@ -40,8 +40,8 @@ const api = new Api({
   },
 });
 
-api.getUserInfo().then((result) => {
-  userInfo.setUserInfo(result);
+api.getUserInfo().then((user) => {
+  userInfo.setUserInfo(user);
   api.getInitialCards().then((result) => {
     const cardList = new Section(
       {
@@ -49,10 +49,12 @@ api.getUserInfo().then((result) => {
         renderer: (item) => {
           const card = new Card(
             item,
-            userInfo._userId,
+            user._id,
             (cardId) => api.addLike(cardId),
             (cardId) => api.removeLike(cardId),
-            popupImage.handleOpen,
+            () => {
+              popupImage.handleOpen({ link: item.link, name: item.name });
+            },
             () => {
               popupWithConfirmation.handleOpen(item._id);
             }
@@ -71,10 +73,10 @@ const popupCards = new PopupWithForm("#popup-cards", (inputs, onClose) => {
   api.addCard(inputs).then((result) => {
     const newCard = new Card(
       result,
-      userInfo._userId,
+      userInfo.getUserInfo().id,
       (cardId) => api.addLike(cardId),
       (cardId) => api.removeLike(cardId),
-      popupImage.handleOpen,
+      () => popupImage.handleOpen(inputs),
       () => {
         popupWithConfirmation.handleOpen(result._id);
       }
