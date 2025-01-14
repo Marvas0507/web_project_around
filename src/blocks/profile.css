@@ -68,6 +68,7 @@
   width: 24px;
   height: 24px;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -86,6 +87,7 @@
   background-position: center;
   height: 50px;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
